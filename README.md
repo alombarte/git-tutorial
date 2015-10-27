@@ -16,12 +16,9 @@ A better git log through `git lg`
 	# Booooh... unreadable
      git log
      
-	# Nice: 
+	# Nicer: 
      git config alias.lg "log --oneline --graph --decorate"
      git lg
-
-	# Or even nicer (https://coderwall.com/p/euwpig):
-	git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 	# Add --all to see all branches when necessary (or add in the alias)
 	git lg --all
@@ -230,3 +227,14 @@ To do it:
 	git rebase master
 
 Rebase should be used only in your own unpublished branches.
+
+Aliases
+=======
+The aliases let you associate complex git commands to a short and memorable command. If you want to make your aliases permanent write them inside the your `~/.gitconfig` file under the section `[alias]`.
+
+	# Nice git log (https://coderwall.com/p/euwpig):
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	
+	# List of all people who contributed
+	contrib = git shortlog --summary
+	
